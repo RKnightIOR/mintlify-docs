@@ -1,0 +1,46 @@
+---
+title: "Single Sign-On"
+description: "Set up Single Sign-On for your company"
+icon: 'arrow-left-to-arc'
+---
+
+## Limitations
+
+- Currently only SAML Identity Providers are supported
+- To set up Single Sign On for your company, you must have company administrator privledges
+
+## How to
+
+### 1. Navigate to the Single Sign-On configuration page
+
+After logging in to your account, click your user icon on the top right and go to "Organisation".
+
+<img
+  src="/images/hydip-org-screenshot.png"
+  alt="Navigate to your Organisation page"
+/>
+
+From here, click the 'Single Sign-On' button on the left-hand side navigation bar.
+
+<img
+  src="/images/hydip-sso-ss.png"
+  alt="Navigate to Single Sign-On"
+/>
+
+### 2. Configure your identity provider to support HyDip
+
+On this page, you will see the SAML service provider details you need to connect your Identity Provider to HyDip.
+
+You will need to input the Entity ID and ACS URL into your identity provider. Please also ensure any rquired attributes listed are available in your identity provider's configuration and for best security, please set the 'NameID' format to 'persistent'.
+
+### 3. Configure HyDip
+
+After configuring your identity provider, you should have been presented with a metadata URL or a metadata file. Please input one of these into the the 'Identity Provider Configuration' section of the form on HyDip.
+
+Next you need to add any email domains this identity provider will support. An email domain is the part of the email that appears after the `@` in an email address. Users in your company who log in with an email address that doesn't match the domains listed here will not use your identity provider.
+
+If you input more than one email domain, please separate them with commas (`,`). These can be updated at any time.
+
+<Warning>Once you configure an identity provider, you cannot modify it other than changing the email domains. If you need to make any changes, please reach out to HyDip Support.</Warning>
+
+Click the 'Save Changes' button and you are done! Users in your company with email addresses that match your listed domains will now log in via your identity provider.
